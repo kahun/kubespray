@@ -34,7 +34,7 @@ spec:
         args:
         - --logtostderr
         - --cert-dir=/tmp
-        - --secure-port=443
+        - --secure-port=8443
 {% if metrics_server_kubelet_preferred_address_types %}
         - --kubelet-preferred-address-types={{ metrics_server_kubelet_preferred_address_types }}
 {% endif %}
@@ -44,7 +44,7 @@ spec:
 {% endif %}
         - --metric-resolution={{ metrics_server_metric_resolution }}
         ports:
-        - containerPort: 443
+        - containerPort: 8443
           name: https
           protocol: TCP
         volumeMounts:
